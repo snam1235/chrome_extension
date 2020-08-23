@@ -1,6 +1,21 @@
 {
   "name": "Getting Started Example",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Build an Extension!",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icon.png",
+      "24": "images/icon.png",
+      "32": "images/icon.png"
+    },
+    "default_popup": "view/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["javascript/content.js"]
+    }
+  ],
+  "permissions": ["tabs"]
 }
